@@ -1,0 +1,71 @@
+<form name="empform" #form="ngForm" autocomplete="off" *(ngSubmit)="onSubmit(form)">
+    <div class="form-group">
+        <label>FULL NAME</label>
+        <input name="EmployeeName" #EmployeeName="ngModel" [(ngModel)]="employeService.formData.EmployeeName"
+        class="form-control" placeholder="Enter full name" minlength="3" maxlength="25"
+        [ngClass]="{'is-valid' : EmployeeName.touched && EmployeeName.invalid}">
+
+        <div class="validation error" *ngIf="EmployeeName.touched && EmployeeName.invalid"> 
+            <div>
+                Full name is required
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label>DESIGNATION</label>
+        <input name="Designation" #Designation="ngModel" [(ngModel)]="employeService.formData.Designation"
+            class="form-control" placeholder="Enter Designation" minlength="3" maxlength="25"
+            [ngClass]="{'is-valid' : Designation.touched && Designation.invalid}">
+    
+        <div class="validation error" *ngIf="Designation.touched && Designation.invalid">
+            <div>
+                Designation is required
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label>DEPARTMENT ID</label>
+        <input name="DepartmentId" #DepartmentId="ngModel" [(ngModel)]="employeService.formData.DepartmentId"
+            class="form-control" placeholder="Enter Department Id" minlength="3" maxlength="25"
+            [ngClass]="{'is-valid' : DepartmentId.touched && DepartmentId.invalid}">
+    
+        <div class="validation error" *ngIf="DepartmentId.touched && DepartmentId.invalid">
+            <div>
+                Designation is required
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <label>JOINED DATE</label>
+        <input name="DateOfJoining" #DateOfJoining="ngModel" [(ngModel)]="employeService.formData.DateOfJoining"
+            class="form-control" placeholder="Enter Date Of Joining" minlength="3" maxlength="25"
+            [ngClass]="{'is-valid' : DateOfJoining.touched && DateOfJoining.invalid}">    
+        <div class="validation error" *ngIf="DateOfJoining.touched && DateOfJoining.invalid">
+            <div>
+                Joined Date is required
+            </div>
+        </div>
+    </div>
+</form>
+IsActive
+<br>
+<div class="form-group">
+    <label>IS ACTIVE</label>
+    <input name="IsActive" #DateOfJoining="ngModel" [(ngModel)]="employeService.formData.IsActive"
+        class="form-control"  minlength="3" maxlength="25"
+        [ngClass]="{'is-valid' : IsActive.touched && IsActive.invalid}">
+    <div class="validation error" *ngIf="IsActive.touched && IsActive.invalid">
+        <div>
+            Is Active is required
+        </div>
+    </div>
+</div>
+<br>
+<div class="form-group">
+    <button type="Submit" [disabled]="!(Form.valid && Form.dirty)" 
+    class="btn btn-lg btn-primary form-control"> SUBMIT</button>
+</div>
+</form>

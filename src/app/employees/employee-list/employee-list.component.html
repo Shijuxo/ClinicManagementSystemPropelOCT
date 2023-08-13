@@ -1,0 +1,25 @@
+<table class="table table-bordered table-striped table-hoverborder border-warning">
+    <thead class="text-white bg-dark">
+        <tr>
+            <th>Employee Id</th>
+            <th>Full Name</th>
+            <th>Designation</th>
+            <th>Department Id</th>
+            <th>Date of Joining</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employeeService.employees">
+            <td>{{emp.EmployeeId}}</td>
+            <td>{{emp.EmployeeName}}</td>
+            <td>{{emp.Designation}}</td>
+            <td>{{emp.DepartmentId}}</td>
+            <td>{{emp.DateOfJoining}}</td>
+            <td>
+                <button class="btn btn-sm btn-outline-info">+</button>
+                <button class="btn btn-sm btn-outline-danger">+</button>
+            </td>
+        </tr>       
+    </tbody>
+</table>
